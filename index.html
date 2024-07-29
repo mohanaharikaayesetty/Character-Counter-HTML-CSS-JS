@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Character Counter</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: 10px solid black;
+      border-bottom: 10px solid black;
+      border-radius: 30px;
+      background-color: white;
+    }
+    .content {
+      background-color: plum;
+      padding: 30px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    h1 {
+      color: #333;
+    }
+    textarea {
+      width: 800px;
+      height: 150px;
+      border: 2px solid black;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+    .info {
+      display: flex;
+      justify-content: space-between;
+      width: 800px;
+      padding: 10px 0;
+      margin-top: 10px; 
+      border-top: 2px solid plum;
+      background-color: plum; 
+    }
+    .info p {
+      margin: 0;
+      color: black;
+      font-weight: bold;
+    }
+    .info span {
+      color: black;
+    }
+  </style>
+  <script>
+    function countCharacters() {
+      var input = document.getElementById("myInput");
+      var counter = document.getElementById("counter");
+      var counter1 = document.getElementById("counter1");
+      var totalLength = input.value.length;
+      counter.innerHTML = totalLength;
+      counter1.innerHTML = 100 - totalLength; 
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>Character Counter</h1>
+      <textarea id="myInput" placeholder="Please write your text here..." oninput="countCharacters()"></textarea>
+      <div class="info">
+        <p>Total Character: <span id="counter">0</span></p>
+        <p>Remaining: <span id="counter1">100</span></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
